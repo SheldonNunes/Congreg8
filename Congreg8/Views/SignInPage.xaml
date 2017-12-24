@@ -1,5 +1,19 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Congreg8.SignInPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:Congreg8.Extensions;assembly=Congreg8"
+    xmlns:local="clr-namespace:Congreg8.Controls;assembly=Congreg8"
+    x:Class="Congreg8.SignInPage">
 	<ContentPage.Content>
+        <StackLayout>
+            <Label Text="{i18n:Translate Welcome}"/>
+            <Label Text="{i18n:Translate SignIn}"/>
+            <Label Text="{i18n:Translate Username}"/>
+            <Entry/>
+            <Label Text="{i18n:Translate Password}"/>
+            <local:FacebookButton WidthRequest="55" Text="Login"/>
+            <Entry/>
+        </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

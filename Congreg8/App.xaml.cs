@@ -8,7 +8,7 @@ namespace Congreg8
         {
             InitializeComponent();
 
-            MainPage = new Congreg8Page();
+            MainPage = new SignInPage();
         }
 
         protected override void OnStart()

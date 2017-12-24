@@ -2,10 +2,10 @@
 using System;
 namespace Congreg8.Tests
 {
-    public class Test
+    public class FriendsServiceTests
     {
         [Fact]
-        public void TestCase()
+        public void GivenAccountWithFriends()
         {
         }
     }

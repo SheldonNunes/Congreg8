@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Globalization;
+
 namespace Congreg8.Helpers
 {
-    public interface ITranslate
+    public interface ILocalize
     {
+        CultureInfo GetCurrentCultureInfo();
     }
 }
