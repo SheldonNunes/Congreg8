@@ -12,7 +12,7 @@
             <Label Text="{i18n:Translate Username}"/>
             <Entry/>
             <Label Text="{i18n:Translate Password}"/>
-            <local:FacebookButton WidthRequest="55" Text="Login"/>
+            <local:FacebookButton WidthRequest="55" Text="Login" x:Name="facebookLogin"/>
             <Entry/>
         </StackLayout>
 	</ContentPage.Content>

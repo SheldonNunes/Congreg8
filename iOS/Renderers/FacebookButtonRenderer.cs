@@ -1,5 +1,7 @@
-﻿using Congreg8.Controls;
+﻿using System.Collections.Generic;
+using Congreg8.Controls;
 using Congreg8.iOS.Renderers;
+using Congreg8.iOS.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
@@ -8,15 +10,36 @@ namespace Congreg8.iOS.Renderers
 {
     public class FacebookButtonRenderer : ButtonRenderer
 	{
-        protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+        List<string> readPermissions = new List<string> { "public_profile", "user_friends" };
+
+        protected override void OnElementChanged(ElementChangedEventArgs<Button> button)
 		{
 			//base.OnElementChanged(e);
 
             if(base.Control == null){
-                SetNativeControl(new Facebook.LoginKit.LoginButton()
+                var loginButton = new Facebook.LoginKit.LoginButton()
                 {
-                    LoginBehavior = Facebook.LoginKit.LoginBehavior.Native
-                });
+                    LoginBehavior = Facebook.LoginKit.LoginBehavior.Native,
+                    ReadPermissions = readPermissions.ToArray(),
+                    Delegate = new FacebookLoginService(),
+                };
+                SetNativeControl(loginButton);
+
+                //loginButton.Completed += (sender, e) => {
+                //    if (e.Error != null)
+                //    {
+                //        // Handle if there was an error
+                //    }
+
+                //    if (e.Result.IsCancelled)
+                //    {
+                //        // Handle if the user cancelled the login request
+                //    }
+
+                //    loginButton.
+
+                //    // Handle your successful login
+                //};
 			}
 
 		}
