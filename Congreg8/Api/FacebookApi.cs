@@ -14,9 +14,27 @@ namespace Congreg8.Api
 
         private readonly string Uri = BaseURI + "{0}/taggable_friends?access_token={1}";
 
-        public List<UserTaggableFriends> GetUserTaggableFriends(string id, string token)
+        public List<UserTaggableFriend> GetUserTaggableFriends(string id, string token)
+        {
+            var response = GetSubsetUserTaggableFriends(id, token);
+            var friends = response.Data;
+            while(!String.IsNullOrWhiteSpace(response.Paging.next)){
+                if (response.Data != null)
+                {
+                    response = GetSubsetUserTaggableFriends(id, token, response.Paging.next);
+                    friends.AddRange(response.Data);
+                }
+            }
+            return friends;
+        }
+
+        private UserTaggableFriendsResponse GetSubsetUserTaggableFriends(string id, string token, string pagingValue = null)
         {
             var request = WebRequest.Create(string.Format(Uri, id, token));
+
+            if (!String.IsNullOrWhiteSpace(pagingValue))
+                request = WebRequest.Create(pagingValue);
+            
             request.ContentType = "application/json";
             request.Method = "GET";
 
@@ -33,15 +51,14 @@ namespace Congreg8.Api
                     }
                     else
                     {
-                        var friends = JsonConvert.DeserializeObject<UserTaggableFriendsResponse>(content);
-
+                        return JsonConvert.DeserializeObject<UserTaggableFriendsResponse>(content);
                     }
 
                 }
             }
 
 
-            return new List<UserTaggableFriends>();
+            return new UserTaggableFriendsResponse();
         }
     }
 }

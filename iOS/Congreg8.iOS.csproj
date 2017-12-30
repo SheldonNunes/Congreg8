@@ -129,6 +129,12 @@
     <Reference Include="MvvmCross.Localization">
       <HintPath>..\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
     </Reference>
+    <Reference Include="CarouselView.FormsPlugin.Abstractions">
+      <HintPath>..\packages\CarouselView.FormsPlugin.5.0.2\lib\Xamarin.iOS10\CarouselView.FormsPlugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="CarouselView.FormsPlugin.iOS">
+      <HintPath>..\packages\CarouselView.FormsPlugin.5.0.2\lib\Xamarin.iOS10\CarouselView.FormsPlugin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />

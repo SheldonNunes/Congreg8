@@ -3,15 +3,15 @@ using Congreg8.Core.Api;
 
 namespace Congreg8.Core.Services
 {
-    public class TokenService
+    public class TokenService : ITokenService
     {
         private Token Token;
 
-        Token GetCurrentToken(){
+        public Token GetCurrentToken(){
             return Token;
         }
 
-        void SetCurrentToken(Token token)
+        public void SetCurrentToken(Token token)
         {
             Token = token;
         }

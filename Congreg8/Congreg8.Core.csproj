@@ -10,6 +10,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="MvvmCross" Version="5.6.3" />
     <PackageReference Include="MvvmCross.Forms" Version="5.6.3" />
+    <PackageReference Include="CarouselView.FormsPlugin" Version="5.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -26,5 +27,11 @@
     <Compile Update="Resources\UIStrings.Designer.cs">
       <DependentUpon>UIStrings.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="MockFacebookFriendsResponse.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MockFacebookFriendsResponse.json" />
   </ItemGroup>
 </Project>

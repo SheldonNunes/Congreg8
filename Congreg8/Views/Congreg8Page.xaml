@@ -6,10 +6,42 @@
      x:Class="Congreg8.Core.Views.Congreg8Page"
      xmlns:i18n="clr-namespace:Congreg8.Core.Extensions;assembly=Congreg8.Core"
      xmlns:viewModels="clr-namespace:Congreg8.Core.ViewModels;assembly=Congreg8.Core"
-     xmlns:d="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms">
+     xmlns:d="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+     xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+     BackgroundColor="{StaticResource BackgroundBlue}">
 	<ContentPage.Content>
-        <StackLayout>
-            <Label Text="Hello World"/>
+        <StackLayout Padding="20,0,20,0">
+            <Label Text="We have selected a person for you to meet up with!" HorizontalTextAlignment="Center"/>
+                            <controls:CarouselViewControl Orientation="Horizontal" InterPageSpacing="10" Position="{Binding CarouselPosition}" ItemsSource="{Binding FriendOptions}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <controls:CarouselViewControl.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Name}" />
+                        
+                        </DataTemplate>
+                    </controls:CarouselViewControl.ItemTemplate>
+                </controls:CarouselViewControl>
+            
+            <Grid Margin="30,0,30,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+               
+
+                <Frame Grid.Column="0" Style="{StaticResource FrameStyle}">
+                    <BoxView Color="Gray"/>
+                </Frame>
+                <Frame Grid.Column="1" Style="{StaticResource FrameStyle}">
+                    <BoxView Color="Gray"/>
+                </Frame>
+                <Frame Grid.Column="2" Style="{StaticResource FrameStyle}">
+                    <BoxView Color="Gray"/>
+                </Frame>
+            </Grid>
+            <Button Text="Veto" BackgroundColor="Purple"/> 
+            <Label Text="You can veto up to three times. Choose wisely" HorizontalTextAlignment="Center"/>
+            
         </StackLayout>
 	</ContentPage.Content>
 </d:MvxContentPage>

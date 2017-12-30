@@ -6,7 +6,7 @@ namespace Congreg8.Api
 {
     public class UserTaggableFriendsResponse
     {
-        public List<UserTaggableFriends> Data
+        public List<UserTaggableFriend> Data
         {
             get;
             set;

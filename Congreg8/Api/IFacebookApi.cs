@@ -7,6 +7,6 @@ namespace Congreg8.Api
 {
     public interface IFacebookApi
     {
-        List<UserTaggableFriends> GetUserTaggableFriends(string id, string token);
+        List<UserTaggableFriend> GetUserTaggableFriends(string id, string token);
     }
 }

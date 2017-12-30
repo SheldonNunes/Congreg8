@@ -1,4 +1,5 @@
-﻿using Facebook.CoreKit;
+﻿using CarouselView.FormsPlugin.iOS;
+using Facebook.CoreKit;
 using Foundation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Forms.iOS;
@@ -24,6 +25,8 @@ namespace Congreg8.iOS
 
             var startup = Mvx.Resolve<IMvxAppStart>();
             startup.Start();
+
+            CarouselViewRenderer.Init();
 
             LoadApplication(setup.FormsApplication);
 

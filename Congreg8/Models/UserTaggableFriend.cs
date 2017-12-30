@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Congreg8.Models
 {
-    public class UserTaggableFriends
+    public class UserTaggableFriend
     {
         public string Id
         {

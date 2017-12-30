@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Congreg8.Api;
+using Congreg8.Core.Services;
 using Congreg8.Models;
 
 namespace Congreg8.Services
 {
-    public class FriendsService
+    public class FriendsService : IFriendsService
     {
         private readonly IFacebookApi facebookApi;
 
@@ -15,9 +16,9 @@ namespace Congreg8.Services
 
         }
 
-        //public List<UserTaggableFriends> GetUserFriends(){
-        //    var friends = facebookApi.GetUserTaggableFriends();
-        //    return friends;
-        //}
+        public List<UserTaggableFriend> GetUserFriends(string userId, string token){
+            var friends = facebookApi.GetUserTaggableFriends(userId, token);
+            return friends;
+        }
     }
 }

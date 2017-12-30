@@ -4,6 +4,16 @@
     x:Class="Congreg8.Core.App" 
     xmlns:d="clr-namespace:MvvmCross.Forms.Platform;assembly=MvvmCross.Forms">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BackgroundBlue">#4267b2</Color>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                    <Setter Property="OutlineColor" Value="White" />
+                    <Setter Property="Padding" Value="5" />
+                    <Setter Property="HasShadow" Value="false" />
+                    <Setter Property="CornerRadius" Value="5" />
+                    <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+        </ResourceDictionary>
         <!-- Application resource dictionary -->
     </Application.Resources>
 </d:MvxFormsApplication>

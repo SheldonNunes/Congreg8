@@ -1,5 +1,6 @@
 ﻿using System;
 using Congreg8.Core.Api;
+using Congreg8.Core.Services;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 
@@ -18,15 +19,7 @@ namespace Congreg8.Core.ViewModels
             }
         }
 
-        private string helloWorld;
-        public string HelloWorld
-        {
-            get { return helloWorld; }
-            set { SetProperty(ref helloWorld, value); } 
-        }
-
-
-        public SignInPageViewModel(IMvxNavigationService navigationService)
+        public SignInPageViewModel(IMvxNavigationService navigationService, ITokenService tokenService)
         {
             this._navigationService = navigationService;
 
@@ -35,10 +28,9 @@ namespace Congreg8.Core.ViewModels
                 if (response.SignInResult == null)
                     return;
 
+                tokenService.SetCurrentToken(response.SignInResult.Token);
                 await _navigationService.Navigate<Congreg8PageViewModel>();
             });
-
-            HelloWorld = " test";
         }
     }
 }
