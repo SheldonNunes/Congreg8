@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<d:MvxContentPage x:TypeArguments="viewModels:SignInPageViewModel"
+<d:MvxContentPage x:TypeArguments="viewModels:Congreg8PageViewModel"
      xmlns="http://xamarin.com/schemas/2014/forms"
      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
      xmlns:local="clr-namespace:Congreg8.Core.Controls"
-     x:Class="Congreg8.Core.Views.SignInPage"
+     x:Class="Congreg8.Core.Views.Congreg8Page"
      xmlns:i18n="clr-namespace:Congreg8.Core.Extensions;assembly=Congreg8.Core"
      xmlns:viewModels="clr-namespace:Congreg8.Core.ViewModels;assembly=Congreg8.Core"
      xmlns:d="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms">
 	<ContentPage.Content>
         <StackLayout>
-            <Label Text="{i18n:Translate Welcome}"/>
-            <Label Text="{i18n:Translate SignIn}"/>
-            <Label Text="{i18n:Translate Username}"/>
-            <Entry/>
-            <Label Text="{i18n:Translate Password}"/>
-            <Label Text="{Binding HelloWorld}"/>
-            <local:FacebookButton WidthRequest="55" Text="Login" LoginCompleted="{Binding LoginCompletedCommand}" x:Name="facebookLogin"/>
-            <Entry/>
+            <Label Text="Hello World"/>
         </StackLayout>
 	</ContentPage.Content>
 </d:MvxContentPage>

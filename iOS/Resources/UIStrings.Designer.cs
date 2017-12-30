@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Congreg8.Core.Resources {
+namespace Congreg8.iOS.Resources {
     using System;
     using System.Reflection;
     
@@ -30,7 +30,7 @@ namespace Congreg8.Core.Resources {
         internal static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Congreg8.Core.Resources.UIStrings", typeof(UIStrings).Assembly);
+                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Congreg8.iOS.Resources.UIStrings", typeof(UIStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

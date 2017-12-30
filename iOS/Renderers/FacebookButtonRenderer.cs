@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
-using Congreg8.Controls;
+using Congreg8.Core.Api;
+using Congreg8.Core.Controls;
 using Congreg8.iOS.Renderers;
-using Congreg8.iOS.Services;
+using Facebook.LoginKit;
+using Foundation;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
@@ -9,39 +11,43 @@ using Xamarin.Forms.Platform.iOS;
 namespace Congreg8.iOS.Renderers
 {
     public class FacebookButtonRenderer : ButtonRenderer
-	{
+    {
         List<string> readPermissions = new List<string> { "public_profile", "user_friends" };
 
         protected override void OnElementChanged(ElementChangedEventArgs<Button> button)
-		{
-			//base.OnElementChanged(e);
-
-            if(base.Control == null){
-                var loginButton = new Facebook.LoginKit.LoginButton()
+        {
+            //base.OnElementChanged(button);
+            if (base.Control == null)
+            {
+                var loginButton = new LoginButton()
                 {
-                    LoginBehavior = Facebook.LoginKit.LoginBehavior.Native,
+                    LoginBehavior = LoginBehavior.Native,
                     ReadPermissions = readPermissions.ToArray(),
-                    Delegate = new FacebookLoginService(),
                 };
                 SetNativeControl(loginButton);
 
-                //loginButton.Completed += (sender, e) => {
-                //    if (e.Error != null)
-                //    {
-                //        // Handle if there was an error
-                //    }
+                FacebookButton el = (FacebookButton)this.Element;
+                loginButton.Completed += (sender, e) =>
+                {
+                    var response = new SignInResponse()
+                    {
+                        SignInResult = new SignInResponse.Result()
+                        {
+                            Token = new Token()
+                            {
+                                AppID = e.Result.Token.AppID,
+                                ExpirationDate = (System.DateTime)e.Result.Token.ExpirationDate,
+                                TokenString = e.Result.Token.TokenString,
+                                UserId = e.Result.Token.UserID,
+                                RefreshDate = (System.DateTime)e.Result.Token.RefreshDate
 
-                //    if (e.Result.IsCancelled)
-                //    {
-                //        // Handle if the user cancelled the login request
-                //    }
+                            }
+                        }
+                    };
 
-                //    loginButton.
-
-                //    // Handle your successful login
-                //};
-			}
-
-		}
-	}
+                    el.OnFacebookLoginCompleted(sender, response);
+                }; 
+            }
+        }
+    }
 }

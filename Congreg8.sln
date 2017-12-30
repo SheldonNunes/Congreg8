@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congreg8.Droid", "Droid\Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congreg8.Tests", "Congreg8.Tests\Congreg8.Tests.csproj", "{6FEBF774-8E00-44A5-A083-C3F8F081C528}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congreg8", "Congreg8\Congreg8.csproj", "{3E3C2611-B6CD-4D62-95BF-9BA43684D622}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congreg8.Core", "Congreg8\Congreg8.Core.csproj", "{3E3C2611-B6CD-4D62-95BF-9BA43684D622}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,25 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using Congreg8.Models;
-using System.Net.Http;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json;
+using Congreg8.Core.Api;
 
 namespace Congreg8.Api
 {
     public class FacebookApi : BaseApi, IFacebookApi
     {
-        private readonly string Uri = BaseURI + "{0}/taggable_friends?access_token={1}";
+        public Token token;
 
-        public FacebookApi()
-        {
-        }
+        private readonly string Uri = BaseURI + "{0}/taggable_friends?access_token={1}";
 
         public List<UserTaggableFriends> GetUserTaggableFriends(string id, string token)
         {
-            var request = HttpWebRequest.Create(string.Format(Uri, id, token));
+            var request = WebRequest.Create(string.Format(Uri, id, token));
             request.ContentType = "application/json";
             request.Method = "GET";
 

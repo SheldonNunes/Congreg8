@@ -1,29 +1,14 @@
-﻿using Xamarin.Forms;
+﻿using MvvmCross.Core.ViewModels;
+using MvvmCross.Forms.Platform;
+using Xamarin.Forms;
 
-namespace Congreg8
+namespace Congreg8.Core
 {
-    public partial class App : Application
+    public partial class App : MvxFormsApplication
     {
         public App()
         {
             InitializeComponent();
-
-            MainPage = new SignInPage();
-        }
-
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
         }
     }
 }
