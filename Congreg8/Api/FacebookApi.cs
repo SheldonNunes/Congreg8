@@ -12,7 +12,7 @@ namespace Congreg8.Api
     {
         public Token token;
 
-        private readonly string Uri = BaseURI + "{0}/taggable_friends?access_token={1}";
+        private readonly string Uri = BaseURI + "{0}/taggable_friends?access_token={1}&fields=name,picture.width(500).height(500)";
 
         public List<UserTaggableFriend> GetUserTaggableFriends(string id, string token)
         {

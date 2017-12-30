@@ -1,4 +1,6 @@
 ﻿using System;
+using Congreg8.Core.Models;
+
 namespace Congreg8.Models
 {
     public class UserTaggableFriend
@@ -15,7 +17,7 @@ namespace Congreg8.Models
             set;
         }
 
-        public object Picture
+        public Picture Picture
         {
             get;
             set;

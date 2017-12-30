@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<d:MvxContentPage x:TypeArguments="viewModels:SignInPageViewModel"
+<d:GradientPage x:TypeArguments="viewModels:SignInPageViewModel"
      xmlns="http://xamarin.com/schemas/2014/forms"
      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
      xmlns:local="clr-namespace:Congreg8.Core.Controls"
      x:Class="Congreg8.Core.Views.SignInPage"
      xmlns:i18n="clr-namespace:Congreg8.Core.Extensions;assembly=Congreg8.Core"
      xmlns:viewModels="clr-namespace:Congreg8.Core.ViewModels;assembly=Congreg8.Core"
-     xmlns:d="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-    BackgroundColor = "#4267b2">
+     xmlns:d="clr-namespace:Congreg8.Core.Controls;assembly=Congreg8.Core"
+    NavigationPage.HasNavigationBar="false">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+                <On Platform="UWP" Value="0, 0, 0, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
 	<ContentPage.Content>
         <StackLayout>
             <Label Text="{i18n:Translate Welcome}"/>
@@ -19,4 +28,4 @@
             <Entry/>
         </StackLayout>
 	</ContentPage.Content>
-</d:MvxContentPage>
+</d:GradientPage>

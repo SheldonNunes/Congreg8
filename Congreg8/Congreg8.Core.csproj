@@ -11,6 +11,7 @@
     <PackageReference Include="MvvmCross" Version="5.6.3" />
     <PackageReference Include="MvvmCross.Forms" Version="5.6.3" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.0.2" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="2.0.0.36-beta" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />

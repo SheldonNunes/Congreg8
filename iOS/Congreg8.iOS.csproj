@@ -135,6 +135,12 @@
     <Reference Include="CarouselView.FormsPlugin.iOS">
       <HintPath>..\packages\CarouselView.FormsPlugin.5.0.2\lib\Xamarin.iOS10\CarouselView.FormsPlugin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.2.0.0.36-beta\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.iOS">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.2.0.0.36-beta\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -159,6 +165,7 @@
     <Compile Include="Helpers\Localize.cs" />
     <Compile Include="Renderers\FacebookButtonRenderer.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="Renderers\GradientPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Congreg8\Congreg8.Core.csproj">

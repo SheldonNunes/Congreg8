@@ -3,6 +3,7 @@ using Facebook.CoreKit;
 using Foundation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Forms.iOS;
+using ImageCircle.Forms.Plugin.iOS;
 using MvvmCross.Platform;
 using UIKit;
 
@@ -27,6 +28,7 @@ namespace Congreg8.iOS
             startup.Start();
 
             CarouselViewRenderer.Init();
+            ImageCircleRenderer.Init();
 
             LoadApplication(setup.FormsApplication);
 

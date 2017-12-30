@@ -40,9 +40,15 @@ namespace Congreg8.Core.ViewModels
             FriendOptions = new List<UserTaggableFriend>();
 
             var rand = new Random();
+            var selectedNumbers = new List<int>();
             for (int i = 0; i < 3; i++)
             {
-                FriendOptions.Add(friends[rand.Next(0, friends.Count - 1)]);
+                var number = rand.Next(0, friends.Count - 1);
+                while(selectedNumbers.Contains(number)){
+                     number = rand.Next(0, friends.Count - 1);
+                }
+                selectedNumbers.Add(number);
+                FriendOptions.Add(friends[number]);
             }
         }
     }

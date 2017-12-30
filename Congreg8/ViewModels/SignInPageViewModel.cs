@@ -27,7 +27,7 @@ namespace Congreg8.Core.ViewModels
             {
                 if (response.SignInResult == null)
                     return;
-
+                
                 tokenService.SetCurrentToken(response.SignInResult.Token);
                 await _navigationService.Navigate<Congreg8PageViewModel>();
             });
