@@ -5,13 +5,39 @@
     xmlns:d="clr-namespace:MvvmCross.Forms.Platform;assembly=MvvmCross.Forms">
     <Application.Resources>
         <ResourceDictionary>
+             <OnPlatform x:Key="HairlineFont" x:TypeArguments="x:String"
+                iOS="Lato-Hairline" Android="Hairline"
+                WinPhone="Assets/Fonts/Hairline.ttf#Hairline"/>
+            <OnPlatform x:Key="LightFont" x:TypeArguments="x:String"
+                iOS="Lato-Light" Android="Light"
+                WinPhone="Assets/Fonts/Light.ttf#Light"/>
+            <OnPlatform x:Key="RegularFont" x:TypeArguments="x:String"
+                iOS="Lato-Regular" Android="Regular"
+                WinPhone="Assets/Fonts/Regular.ttf#Regular"/>
+            <OnPlatform x:Key="IconFont" x:TypeArguments="x:String"
+                iOS="IconFont" Android="Regular"
+                WinPhone="Assets/Fonts/Regular.ttf#Regular"/>
+            
             <Color x:Key="BackgroundBlue">#4267b2</Color>
+            
             <Style x:Key="FrameStyle" TargetType="Frame">
                     <Setter Property="OutlineColor" Value="White" />
                     <Setter Property="Padding" Value="5" />
                     <Setter Property="HasShadow" Value="false" />
                     <Setter Property="CornerRadius" Value="5" />
                     <Setter Property="BackgroundColor" Value="Transparent"/>
+                    <Setter Property="WidthRequest" Value="20"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource RegularFont}"/>
+            </Style>
+            <Style x:Key="Heading1" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource LightFont}"/>
+                <Setter Property="FontSize" Value="40"/>
+            </Style>
+            <Style x:Key="Heading2" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource LightFont}"/>
+                <Setter Property="FontSize" Value="30"/>
             </Style>
         </ResourceDictionary>
         <!-- Application resource dictionary -->

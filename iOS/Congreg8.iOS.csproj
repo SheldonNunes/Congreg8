@@ -141,15 +141,25 @@
     <Reference Include="ImageCircle.Forms.Plugin.iOS">
       <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.2.0.0.36-beta\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Congreg8_Transparent.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Congreg8_Transparent.imageset\congreg8_transparent.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Helpers\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Resources\Fonts\" />
+    <Folder Include="Assets.xcassets\Congreg8_Transparent.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -166,6 +176,7 @@
     <Compile Include="Renderers\FacebookButtonRenderer.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Renderers\GradientPageRenderer.cs" />
+    <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Congreg8\Congreg8.Core.csproj">
@@ -183,6 +194,10 @@
     <BundleResource Include="Resources\UIStrings.Designer.cs">
       <DependentUpon>UIStrings.resx</DependentUpon>
     </BundleResource>
+    <BundleResource Include="Resources\Fonts\Lato-Hairline.ttf" />
+    <BundleResource Include="Resources\Fonts\Lato-Light.ttf" />
+    <BundleResource Include="Resources\Fonts\Lato-Regular.ttf" />
+    <BundleResource Include="Resources\Fonts\IconFont.otf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

@@ -11,21 +11,18 @@
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <OnPlatform.Platforms>
-                <On Platform="iOS" Value="0, 20, 0, 0" />
-                <On Platform="Android" Value="0, 0, 0, 0" />
-                <On Platform="UWP" Value="0, 0, 0, 0" />
+                <On Platform="iOS" Value="20, 40, 20, 20" />
+                <On Platform="Android" Value="20, 20, 20, 20" />
+                <On Platform="UWP" Value="20, 20, 20, 20" />
             </OnPlatform.Platforms>
         </OnPlatform>
     </ContentPage.Padding>
 	<ContentPage.Content>
-        <StackLayout>
-            <Label Text="{i18n:Translate Welcome}"/>
-            <Label Text="{i18n:Translate SignIn}"/>
-            <Label Text="{i18n:Translate Username}"/>
-            <Entry/>
-            <Label Text="{i18n:Translate Password}"/>
+        <StackLayout Spacing="30">
+            <Label Text="{i18n:Translate Welcome}" Style="{StaticResource Heading1}" HorizontalTextAlignment="Center"/>
+            <Image Source="Congreg8_Transparent.png" HeightRequest="120"/>
+            <Label Text="{i18n:Translate WelcomeDescription}"/>
             <local:FacebookButton WidthRequest="55" Text="Login" LoginCompleted="{Binding LoginCompletedCommand}" x:Name="facebookLogin"/>
-            <Entry/>
         </StackLayout>
 	</ContentPage.Content>
 </d:GradientPage>

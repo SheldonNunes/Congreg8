@@ -67,5 +67,12 @@
 		<string>fbauth2</string>
 		<string>fb-messenger-api20140430</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/Lato-Hairline.ttf</string>
+		<string>Fonts/Lato-Light.ttf</string>
+		<string>Fonts/Lato-Regular.ttf</string>
+		<string>Fonts/IconFont.otf</string>
+	</array>
 </dict>
 </plist>

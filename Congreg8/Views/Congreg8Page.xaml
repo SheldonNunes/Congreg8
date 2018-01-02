@@ -13,46 +13,57 @@
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <OnPlatform.Platforms>
-                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="iOS" Value="0, 40, 0, 20" />
                 <On Platform="Android" Value="0, 0, 0, 0" />
                 <On Platform="UWP" Value="0, 0, 0, 0" />
             </OnPlatform.Platforms>
         </OnPlatform>
     </ContentPage.Padding>
 	<ContentPage.Content>
-        <StackLayout Padding="20,20,20,20">
-            <Label Text="Have a catch-up with:" HorizontalTextAlignment="Center"/>
-                            <controls:CarouselViewControl Orientation="Horizontal" InterPageSpacing="10" Position="{Binding CarouselPosition}" ItemsSource="{Binding FriendOptions}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height=".3*"/>
+                <RowDefinition Height=".2*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                 <controls:CarouselViewControl Orientation="Horizontal" ShowArrows="false" ShowIndicators="false" InterPageSpacing="10" Position="{Binding CarouselPosition}" ItemsSource="{Binding FriendOptions}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                     <controls:CarouselViewControl.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
-                                <imageCircle:CircleImage Source="{Binding Picture.Data.URL}" Aspect="AspectFill" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" BorderColor="White" BorderThickness="3"/>
-                                <Label Text="{Binding Name}" HorizontalTextAlignment="Center" />
+                                <imageCircle:CircleImage Source="{Binding Picture.Data.URL}" Aspect="AspectFill" HeightRequest="180" WidthRequest="180" HorizontalOptions="Center" BorderColor="White" BorderThickness="3"/>
+                                <Label Text="{Binding Name}" Style="{StaticResource Heading2}" HorizontalTextAlignment="Center" />
                             </StackLayout>
                         </DataTemplate>
                     </controls:CarouselViewControl.ItemTemplate>
                 </controls:CarouselViewControl>
+             </StackLayout>
+               <StackLayout Grid.Row="1">
+                <Grid Margin="50,0,50,0" HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Column="0" Style="{StaticResource FrameStyle}">
+                        <Label Text="" FontFamily="{StaticResource IconFont}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#FFC969"/>
+                    </Frame>
+                    <Frame Grid.Column="1" Style="{StaticResource FrameStyle}">
+                        <BoxView Color="Transparent"/>
+                    </Frame>
+                    <Frame Grid.Column="2" Style="{StaticResource FrameStyle}">
+                        <BoxView Color="Transparent"/>
+                    </Frame>
+                </Grid>
+                <StackLayout Padding="30,0,30,0">
+                    <Button Text="Veto" WidthRequest="80" BackgroundColor="#FFC969" TextColor="Black"/> 
+                </StackLayout>
+                <Label Text="You can veto up to three times. Choose wisely" HorizontalTextAlignment="Center"/>
+            </StackLayout>
             
-            <Grid Margin="30,0,30,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Frame Grid.Column="0" Style="{StaticResource FrameStyle}">
-                    <BoxView Color="Gray"/>
-                </Frame>
-                <Frame Grid.Column="1" Style="{StaticResource FrameStyle}">
-                    <BoxView Color="Gray"/>
-                </Frame>
-                <Frame Grid.Column="2" Style="{StaticResource FrameStyle}">
-                    <BoxView Color="Gray"/>
-                </Frame>
-            </Grid>
-            <Button Text="Veto" BackgroundColor="Purple"/> 
-            <Label Text="You can veto up to three times. Choose wisely" HorizontalTextAlignment="Center"/>
-            
-        </StackLayout>
+            <StackLayout Grid.Row="2" Padding="30,0,30,0">
+                <Button Text="Select &amp; Message" WidthRequest="80" BackgroundColor="#5D84C7" TextColor="White" VerticalOptions="EndAndExpand"/> 
+            </StackLayout>
+        </Grid>
 	</ContentPage.Content>
 </d:GradientPage>

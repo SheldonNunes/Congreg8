@@ -53,21 +53,9 @@ namespace Congreg8.Core.Resources {
             }
         }
         
-        internal static string SignIn {
+        internal static string WelcomeDescription {
             get {
-                return ResourceManager.GetString("SignIn", resourceCulture);
-            }
-        }
-        
-        internal static string Username {
-            get {
-                return ResourceManager.GetString("Username", resourceCulture);
-            }
-        }
-        
-        internal static string Password {
-            get {
-                return ResourceManager.GetString("Password", resourceCulture);
+                return ResourceManager.GetString("WelcomeDescription", resourceCulture);
             }
         }
     }
