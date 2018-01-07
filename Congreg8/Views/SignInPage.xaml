@@ -1,5 +1,28 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Congreg8.SignInPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<d:GradientPage x:TypeArguments="viewModels:SignInPageViewModel"
+     xmlns="http://xamarin.com/schemas/2014/forms"
+     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+     xmlns:local="clr-namespace:Congreg8.Core.Controls"
+     x:Class="Congreg8.Core.Views.SignInPage"
+     xmlns:i18n="clr-namespace:Congreg8.Core.Extensions;assembly=Congreg8.Core"
+     xmlns:viewModels="clr-namespace:Congreg8.Core.ViewModels;assembly=Congreg8.Core"
+     xmlns:d="clr-namespace:Congreg8.Core.Controls;assembly=Congreg8.Core"
+    NavigationPage.HasNavigationBar="false">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="20, 40, 20, 20" />
+                <On Platform="Android" Value="20, 20, 20, 20" />
+                <On Platform="UWP" Value="20, 20, 20, 20" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
 	<ContentPage.Content>
+        <StackLayout Spacing="30">
+            <Label Text="{i18n:Translate Welcome}" Style="{StaticResource Heading1}" HorizontalTextAlignment="Center"/>
+            <Image Source="Congreg8_Transparent.png" HeightRequest="120"/>
+            <Label Text="{i18n:Translate WelcomeDescription}"/>
+            <local:FacebookButton WidthRequest="55" Text="Login" LoginCompleted="{Binding LoginCompletedCommand}" x:Name="facebookLogin"/>
+        </StackLayout>
 	</ContentPage.Content>
-</ContentPage>
+</d:GradientPage>
